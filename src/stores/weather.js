@@ -4,7 +4,6 @@ import { defineStore } from "pinia";
 import { API } from "../common/constants";
 import { useGeneral } from "./general";
 
-
 export const useWeather = defineStore("weather", () => {
   const data = ref({
     todayWeatherData: null,
@@ -28,8 +27,8 @@ export const useWeather = defineStore("weather", () => {
       data.value.todayWeatherData = responses[0].data;
       data.value.weeklyWeatherData = responses[1].data;
 
-      console.log(data.value.todayWeatherData);
-      console.log(data.value.weeklyWeatherData);
+      // console.log(data.value.todayWeatherData);
+      // console.log(data.value.weeklyWeatherData);
 
       generalStore.data.loading = false;
     } catch (error) {
@@ -69,5 +68,5 @@ export const useWeather = defineStore("weather", () => {
     }
   };
 
-  return { data, getCurrentLocation };
+  return { data, getCurrentLocation, getWeatherData };
 });

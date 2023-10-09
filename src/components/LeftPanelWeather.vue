@@ -3,30 +3,25 @@ import { useWeather } from "../stores/weather.js";
 import { useGeneral } from "../stores/general.js";
 import { getDate, changeTemperature, getImage } from "../common/utils.js";
 import { computed } from "vue";
-import { TYPE_DEGREES } from "../common/constants.js";
+import { MODULE, TYPE_DEGREES } from "../common/constants.js";
 
 const weatherStore = useWeather();
 const generalStore = useGeneral();
 
-const todayWeatherData = computed(() => {
-  return weatherStore.data.todayWeatherData;
-});
+const todayWeatherData = computed(() => weatherStore.data.todayWeatherData);
 
 const degree = computed(() =>
   generalStore.data.activeDegrees == TYPE_DEGREES.CELSIUS ? "°C" : "°F"
 );
 
-const setLocation = () => {
-  weatherStore.getCurrentLocation();
-};
+const setLocation = () => weatherStore.getCurrentLocation();
 
-const activatePanelLocation = () => {
-  console.log("activatePanelLocation");
-};
+const activatePanelLocation = () =>
+  generalStore.updateData("activeModule", MODULE.LOCATION);
 </script>
 
 <template>
-  <div v-if="todayWeatherData" >
+  <div v-if="todayWeatherData">
     <!-- Buttons -->
     <div
       class="d-flex justify-content-between align-items-center px-4"

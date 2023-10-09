@@ -9,9 +9,9 @@ export const useGeneral = defineStore("general", () => {
     loading: false,
   });
 
-  const updataData = (element, value) => {
+  const updateData = (element, value) => {
     data.value[element] = value;
   };
 
-  return { data, updataData };
+  return { data, updateData };
 });

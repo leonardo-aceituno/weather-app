@@ -5,7 +5,7 @@ import { TYPE_DEGREES } from "../common/constants.js";
 const generalStore = useGeneral();
 
 const changeDegrees = (degree) => {
-  generalStore.updataData("activeDegrees", degree);
+  generalStore.updateData("activeDegrees", degree);
 };
 </script>
 
