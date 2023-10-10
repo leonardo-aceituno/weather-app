@@ -24,6 +24,8 @@ const locations = computed(() => locationStore.data.locations);
 
 const existLocations = computed(() => locations.value.length > 0);
 
+const saveLocations = computed(() => locationStore.data.saveLocations);
+
 watch(city, (newCity) => {
   if (newCity.length > 3) search(newCity);
 });
@@ -35,6 +37,12 @@ const searchLocation = (item) => {
   city.value = "";
   close();
 };
+
+const searchLocationHistorial = (item) => {
+  if (saveLocations.value && saveLocations.value.length > 0) searchLocation(item);
+};
+
+const resetCity = () => (city.value = "");
 </script>
 
 <template>
@@ -61,14 +69,23 @@ const searchLocation = (item) => {
           placeholder="search location"
           v-model="city"
         />
+        <span v-if="city.length > 3" class="input-group-text rounded-0">
+          <font-awesome-icon
+            :icon="['fas', 'xmark']"
+            style="color: red; cursor: pointer"
+            @click="resetCity"
+          />
+        </span>
       </div>
 
-      <ul v-if="existLocations && city.length > 3" class="list-group mt-1">
+      <ul id="search" v-if="existLocations && city.length > 3" class="list-group mt-1">
         <li
           v-for="(item, index) in locations"
           :key="'location_' + index"
           class="list-group-item d-flex justify-content-between"
           @click="searchLocation(item)"
+          style="font-size: 14px"
+          @blur=""
         >
           <span>{{ item.name }}</span>
           <span>{{ item.country }}</span>
@@ -87,8 +104,10 @@ const searchLocation = (item) => {
     </div> -->
   </div>
 
+  <!-- search_history -->
   <div
     v-if="locationStore.data.saveLocations && locationStore.data.saveLocations.length > 0"
+    id="search_history"
     class="mx-4 mt-5"
   >
     <p class="txt-title">Search history</p>
@@ -96,10 +115,15 @@ const searchLocation = (item) => {
       v-for="(item, index) in locationStore.data.saveLocations"
       :key="index"
       class="list-group-item d-flex justify-content-between"
-      @click="searchLocation(item)"
+      @click="searchLocationHistorial(item)"
     >
-      <span>{{ item.name }}</span>
-      <span>{{ item.country }}</span>
+      <span>{{ item.name }}, {{ item.country }}</span>
+
+      <font-awesome-icon
+        :icon="['fas', 'magnifying-glass']"
+        @click="close"
+        style="cursor: pointer"
+      />
     </li>
   </div>
 </template>
@@ -126,11 +150,16 @@ const searchLocation = (item) => {
   color: #88869d;
 }
 
-li {
+#search li {
   cursor: pointer;
 }
-li:hover {
+#search li:hover {
   cursor: pointer;
   background-color: #cccccc;
+}
+
+#search_history li:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 </style>

@@ -32,7 +32,7 @@ export const useLocation = defineStore("location", () => {
 
       data.value.locations =
         response.data.length == 0
-          ? [{ name: "without result" }]
+          ? [{ name: "There are no results for your search" }]
           : response.data;
     } catch (error) {
       console.error("Error al obtener datos:", error.message);
