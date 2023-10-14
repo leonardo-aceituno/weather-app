@@ -19,17 +19,17 @@ export function getImage(id) {
 
   switch (id) {
     case 800:
-      return (img = `/Clear.png`);
+      return (img = `Clear.png`);
       break;
 
     case 801:
-      return (img = `../../public/LightCloud.png`);
+      return (img = `LightCloud.png`);
       break;
 
     case 802:
     case 803:
     case 804:
-      return (img = `../../public/HeavyCloud.png`);
+      return (img = `HeavyCloud.png`);
       break;
 
     case 520:
@@ -40,7 +40,7 @@ export function getImage(id) {
     case 502:
     case 503:
     case 504:
-      return (img = `../../public/HeavyRain.png`);
+      return (img = `HeavyRain.png`);
       break;
 
     case 300:
@@ -53,11 +53,11 @@ export function getImage(id) {
     case 321:
     case 500:
     case 501:
-      return (img = `../../public/LightRain.png`);
+      return (img = `LightRain.png`);
       break;
 
     case 511:
-      return (img = `../../public/Sleet.png`);
+      return (img = `Sleet.png`);
       break;
 
     case 600:
@@ -71,7 +71,7 @@ export function getImage(id) {
     case 620:
     case 621:
     case 622:
-      return (img = `../../public/Snow.png`);
+      return (img = `Snow.png`);
       break;
 
     case 200:
@@ -84,7 +84,7 @@ export function getImage(id) {
     case 230:
     case 231:
     case 232:
-      return (img = `../../public/Thunderstorm.png`);
+      return (img = `Thunderstorm.png`);
       break;
     default:
       break;
