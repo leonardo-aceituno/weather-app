@@ -25,10 +25,10 @@ import RightPanelToday from "./RightPanelToday.vue";
     </div>
 
     <!-- Autor -->
-    <div class="my-5 pt-5 text-center">
-      <span class="txt-footer"
-        >created by <b>leonardo-aceituno</b> - devChallenges.io</span
-      >
+    <div class="container-author d-flex justify-content-center align-items-end mt-5 mt-lg-0 pb-lg-3 pb-0">
+      <span class="txt-footer text-center">
+        created by <b>leonardo-aceituno</b> - devChallenges.io
+      </span>
     </div>
   </div>
 </template>
@@ -40,12 +40,22 @@ import RightPanelToday from "./RightPanelToday.vue";
 .container-today {
   height: 45vh;
 }
+.container-author {
+  height: 15vh;
+}
+.text-footer {
+  font-size: 14px;
+  color: #a09fb1;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: center;
+  font-weight: 600;
+}
 
 @media (max-width: 992px) {
-  .container-week {
-    height: auto;
-  }
-  .container-today {
+  .container-week,
+  .container-today,
+  .container-author {
     height: auto;
   }
 }

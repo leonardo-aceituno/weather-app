@@ -100,14 +100,6 @@ const todayWeatherData = computed(() => {
 </template>
 
 <style scoped>
-.text-footer {
-  font-size: 14px;
-  color: #a09fb1;
-  line-height: 17px;
-  letter-spacing: 0em;
-  text-align: center;
-  font-weight: 600;
-}
 .progress-bar {
   background-color: #ffec65;
 }

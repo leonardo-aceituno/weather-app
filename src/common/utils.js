@@ -19,7 +19,7 @@ export function getImage(id) {
 
   switch (id) {
     case 800:
-      return (img = `../../public/Clear.png`);
+      return (img = `/Clear.png`);
       break;
 
     case 801:
