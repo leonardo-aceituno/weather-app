@@ -15,15 +15,38 @@ import RightPanelToday from "./RightPanelToday.vue";
     </div>
 
     <!-- Cards week -->
-    <div>
+    <div class="container-week">
       <RightPanelWeek />
     </div>
 
     <!-- Cards Today -->
-    <div>
+    <div class="container-today">
       <RightPanelToday />
+    </div>
+
+    <!-- Autor -->
+    <div class="my-5 pt-5 text-center">
+      <span class="txt-footer"
+        >created by <b>leonardo-aceituno</b> - devChallenges.io</span
+      >
     </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.container-week {
+  height: 30vh;
+}
+.container-today {
+  height: 45vh;
+}
+
+@media (max-width: 992px) {
+  .container-week {
+    height: auto;
+  }
+  .container-today {
+    height: auto;
+  }
+}
+</style>

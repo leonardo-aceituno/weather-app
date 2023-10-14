@@ -96,12 +96,6 @@ const todayWeatherData = computed(() => {
         </p>
       </div>
     </div>
-
-    <div class="my-4 pt-5 text-center">
-      <span class="txt-footer"
-        >created by <b>leonardo-aceituno</b> - devChallenges.io</span
-      >
-    </div>
   </div>
 </template>
 

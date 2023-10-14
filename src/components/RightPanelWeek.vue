@@ -26,11 +26,11 @@ const degree = computed(() =>
 </script>
 
 <template>
-  <div v-if="weeklyWeatherData" class="row mx-0 justify-content-between mt-5">
+  <div v-if="weeklyWeatherData" class="row mx-0 justify-content-between pt-5">
     <div
       v-for="(item, index) in weeklyWeather"
       :key="index"
-      class="col-12 col-md-6 custom-column p-3 text-center mb-5"
+      class="col-12 col-md-6 custom-column px-2 py-3 text-center mb-5"
     >
       <div class="txt-data" style="min-height: 5%">
         {{ getDate(item.dt) }}
